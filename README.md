@@ -7,3 +7,6 @@ I think that it would be cool if this bot can :
 
 1. color the result
 2. sent mp3 pronunciation file to me
+
+
+Use [bottender framework](https://github.com/Yoctol/bottender).
