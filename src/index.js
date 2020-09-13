@@ -13,10 +13,16 @@ async function App(context) {
 };
 
 async function searchWord(context) {
-    console.log('search');
+    //console.log('search');
     const { text } = context.event
-    let meaning = await getWord(text);
-    await context.sendText(meaning)
+    console.log(text)
+    const { meaning, mp3File }  = await getWord(text);
+
+    // send meaning 
+    await context.sendMessage(meaning, {parseMode : 'markdown'})
+    // send pronunciation
+    if (mp3File != "-1")
+        await context.sendVoice(mp3File)
 }
 
 async function handleNumber (context) {
